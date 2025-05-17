@@ -21,3 +21,18 @@ class TestGetSumOfEvens(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+    
+import unittest
+from src.question_3.get_bonus_pay_amount import get_bonus_pay_amount
+
+class TestGetBonusPayAmount(unittest.TestCase):
+    def test_bonus_values(self):
+        self.assertEqual(get_bonus_pay_amount(-1), "Invalid arguments")
+        self.assertEqual(get_bonus_pay_amount(200), 10)       # 5% of 200
+        self.assertEqual(get_bonus_pay_amount(600), 36)       # 6% of 600
+        self.assertEqual(get_bonus_pay_amount(1000), 70)      # 7% of 1000
+        self.assertEqual(get_bonus_pay_amount(1500), 120)     # 8% of 1500
+        self.assertEqual(get_bonus_pay_amount(2000), "Invalid arguments")
+
+if __name__ == '__main__':
+    unittest.main()
