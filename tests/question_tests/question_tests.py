@@ -1,12 +1,12 @@
-#write function tests here, don't add input('') statements here!
 import unittest
+from src.question_1.use_local_variable import use_local_variable
 
-#follow this example to add questions b, c, and d for testing including their functions
-from src.question_a.question_a import test_config
+class TestUseLocalVariable(unittest.TestCase):
+    def test_local_variable_does_not_affect_external(self):
+        num = 100
+        use_local_variable(num)
+        # Check that `num` is still 100 after function call
+        self.assertEqual(num, 100)
 
-class Test_Config(unittest.TestCase):
-
-    def test_question_a_config(self):
-        self.assertEqual(True, test_config())
-
-
+if __name__ == '__main__':
+    unittest.main()
